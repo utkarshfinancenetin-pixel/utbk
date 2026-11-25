@@ -7,10 +7,7 @@ import { GOOGLE_SHEET_WEB_APP_URL } from '../config/sheetConfig.js';
  * zero CORS failures across all devices and browsers.
  */
 export async function sendToGoogleSheet(formData) {
-  console.group('🚀 [Utkarsh Finance -> Google Sheets]');
-  console.log('📝 Form Type:', formData.formType || 'general');
-  console.log('🔗 Target Web App URL:', GOOGLE_SHEET_WEB_APP_URL);
-  console.log('📦 Data Payload to be saved:', formData);
+
 
   // If user hasn't deployed Google Apps Script URL yet, log warning and return success gracefully
   if (!GOOGLE_SHEET_WEB_APP_URL || GOOGLE_SHEET_WEB_APP_URL.trim() === '') {
@@ -34,7 +31,7 @@ export async function sendToGoogleSheet(formData) {
     const now = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
     payload.append('submissionDate', now);
 
-    console.log('⏳ Sending POST request to Google Apps Script...');
+    
 
     // Send POST request with no-cors to bypass cross-origin redirect restrictions
     await fetch(GOOGLE_SHEET_WEB_APP_URL, {
@@ -46,14 +43,11 @@ export async function sendToGoogleSheet(formData) {
       },
     });
 
-    console.log('✅ Form submission successfully sent to Google Sheet at:', now);
-    console.log('📊 Check your Google Sheet tab ("Loan Applications" / "Contact Enquiries") to see the new row!');
     console.groupEnd();
 
     return { success: true };
   } catch (error) {
-    console.error('❌ [Google Sheets Integration Error]:', error);
-    console.groupEnd();
+
     return { success: false, error: error.message };
   }
 }
