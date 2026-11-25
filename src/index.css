@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  /* Utkarsh Corporate Theme Colors */
+  --bg-color: #FFFFFF;
+  --bg-color-alt: #F4F7FB;
+  --surface-color: #FFFFFF;
+  --border-color: #E2E8F0;
+  
+  /* Utkarsh Brand Colors */
+  --primary-color: #0A3871; /* Utkarsh Corporate Deep Blue */
+  --primary-color-hover: #07264D;
+  --primary-color-light: #EBF3FA;
+  --secondary-color: #F37022; /* Utkarsh Vibrant Orange */
+  --secondary-color-hover: #D45B12;
+  --secondary-color-light: #FFF2EB;
+  --accent-gold: #FFAA00;
+  --accent-blue: #0284C7;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  
+  /* Status Colors */
+  --success: #16A34A;
+  --error: #DC2626;
+  --warning: #F59E0B;
+  
+  /* Typography */
+  --font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px 0 rgba(10, 56, 113, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(10, 56, 113, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 24px -4px rgba(10, 56, 113, 0.12), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+h4 { font-size: clamp(1.1rem, 2vw, 1.25rem); }
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button Utilities */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(10, 56, 113, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--primary-color-hover);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(10, 56, 113, 0.3);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(243, 112, 34, 0.3);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color-hover);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(243, 112, 34, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-outline-orange {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 1.5px solid var(--secondary-color);
+}
+
+.btn-outline-orange:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.8rem;
+  font-size: 1.05rem;
+  border-radius: var(--border-radius-md);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.page-header {
+  padding: 3.5rem 0 3rem;
+  background-color: var(--bg-color-alt);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bg-light {
+  background-color: var(--bg-color-alt);
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.gap-10 { gap: 2.5rem; }
+.gap-12 { gap: 3rem; }
+.gap-16 { gap: 4rem; }
+
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+
+@media (min-width: 768px) {
+  .md-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .md-grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Utkarsh Corporate Cards */
+.card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: #CBD5E1;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--border-radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(243, 112, 34, 0.18);
+}
+
+/* Form Validation Styles */
+.form-input.input-error, .form-select.input-error, .form-textarea.input-error {
+  border-color: #DC2626 !important;
+  background-color: #FEF2F2 !important;
+}
+
+.form-input.input-error:focus, .form-select.input-error:focus, .form-textarea.input-error:focus {
+  border-color: #DC2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.18) !important;
+}
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #DC2626;
+  font-size: 0.83rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+/* Helper Classes */
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.p-4 { padding: 1rem; }
+.p-5 { padding: 1.25rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.p-10 { padding: 2.5rem; }
+.p-12 { padding: 3rem; }
+.text-center { text-align: center; }
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-muted { color: var(--text-muted); }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.w-full { width: 100%; }
+.max-w-2xl { max-width: 42rem; }
+.text-uppercase { text-transform: uppercase; }
+.rounded-lg { border-radius: var(--border-radius-lg); }
+.rounded-xl { border-radius: 18px; }
+.relative { position: relative; }

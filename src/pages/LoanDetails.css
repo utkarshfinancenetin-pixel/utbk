@@ -1,0 +1,234 @@
+/* ==========================================================================
+   LOAN DETAILS & CONTACT US PAGE STYLES
+   ========================================================================== */
+
+.loan-details-page {
+  background-color: #F8FAFC;
+  min-height: 80vh;
+}
+
+.contact-section-padding {
+  padding: 3.5rem 0 5rem;
+}
+
+.contact-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 992px) {
+  .contact-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Main Contact Cards */
+.contact-main-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2.75rem 2.5rem;
+  box-shadow: 0 10px 30px rgba(10, 56, 113, 0.08);
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .contact-main-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
+  }
+}
+
+.contact-card-blue {
+  border-top: 5px solid #0A3871;
+}
+
+.contact-card-orange {
+  border-top: 5px solid #F37022;
+}
+
+/* Card Header */
+.contact-card-header {
+  margin-bottom: 2rem;
+}
+
+.contact-card-title {
+  color: #0A3871;
+  font-size: 1.65rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-subtitle {
+  color: #64748B;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Inner Contact Info Blocks */
+.contact-info-blocks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info-block {
+  padding: 1.35rem 1.5rem;
+  border-radius: 12px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-info-block:hover {
+  transform: translateY(-2px);
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(10, 56, 113, 0.06);
+}
+
+.contact-info-block.border-blue {
+  border-left: 4px solid #0A3871;
+}
+
+.contact-info-block.border-orange {
+  border-left: 4px solid #F37022;
+}
+
+.contact-block-icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  background: #FFF2EB;
+  color: #F37022;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info-block.border-blue .contact-block-icon {
+  background: #EBF3FA;
+  color: #0A3871;
+}
+
+.contact-block-content {
+  flex: 1;
+}
+
+.contact-block-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0A3871;
+  margin-bottom: 0.4rem;
+}
+
+.contact-block-text {
+  color: #334155;
+  font-size: 0.925rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.contact-block-text strong {
+  color: #0F172A;
+}
+
+.contact-block-text a {
+  color: #0A3871;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-block-text a:hover {
+  color: #F37022;
+  text-decoration: underline;
+}
+
+/* Card Bottom Footer */
+.contact-card-footer {
+  padding-top: 1.25rem;
+  border-top: 1px solid #E2E8F0;
+  font-size: 0.8rem;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Contact Form Specific Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 0;
+}
+
+.contact-form .form-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.45rem;
+}
+
+.contact-form .form-input,
+.contact-form .form-textarea {
+  padding: 0.85rem 1.15rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1.5px solid #CBD5E1;
+  background-color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.contact-form .form-input:focus,
+.contact-form .form-textarea:focus {
+  border-color: #F37022;
+  box-shadow: 0 0 0 3px rgba(243, 112, 34, 0.15);
+  background-color: #FFFFFF;
+}
+
+.contact-form .form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-submit-btn {
+  padding: 0.95rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(243, 112, 34, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-form-footer-note {
+  font-size: 0.8rem;
+  color: #64748B;
+  text-align: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid #E2E8F0;
+  margin-top: 1.5rem;
+}
